@@ -1,0 +1,36 @@
+<!-- Account selector -->
+<div>
+  <label>Select WhatsApp Account:</label>
+
+  <select *ngIf="1" [(ngModel)]="accountId" (change)="initAccount()">
+    <option *ngFor="let acc of accounts" [value]="acc">{{ acc }}</option>
+  </select>
+</div>
+
+<!-- Show QR code if WhatsApp not ready -->
+<div *ngIf="!whatsappReady">
+  <div *ngIf="qr; else waiting">
+    <img [src]="qr" alt="Scan QR with WhatsApp" />
+    <p>Scan this QR code with your WhatsApp app ({{ accountId }})</p>
+  </div>
+  <ng-template #waiting>
+    <p>Waiting for QR code...</p>
+  </ng-template>
+</div>
+
+<!-- Show Send Message button when WhatsApp is ready -->
+<div *ngIf="whatsappReady">
+  <p>✅ WhatsApp connected ({{ accountId }})!</p>
+
+  <input
+    type="text"
+    placeholder="Phone number (with country code)"
+    [(ngModel)]="phoneNumber"
+  />
+  <input
+    type="text"
+    placeholder="Message"
+    [(ngModel)]="message"
+  />
+  <button (click)="sendMessage()">Send Message</button>
+</div>

@@ -1,0 +1,140 @@
+<div class="sidebar" [hidden]="getView()">
+  <div class="sidebar-header">
+    <img src="/tvm_admin_assets/img/Cts_kerala_logo.svg" *ngIf="isDesktopMenu()" alt="Logo" />
+    <!-- <button mat-raised-button class="sidebar-toggler" (click)="toggleSidebar()">☰</button> -->
+  </div>
+  
+  <ul class="sidebar-menu" style="display: flex; flex-direction: column; justify-content: space-between; height: 50%;">
+    <!-- Student View -->
+    <li *ngIf="isDesktopMenu() && student_view" style="display: flex; flex-direction: column; gap: 20px; margin-top: 30px;">
+     
+      <a   [routerLink]="[menuItems[menuArray[13]].path]" *ngIf="menuArray[13] > -1">
+        <i class="fa fa-user-plus"></i> {{ menuItems[menuArray[13]].title }}
+      </a>
+      <a [routerLink]="[menuItems[menuArray[42]].path]" *ngIf="menuArray[42] > -1">
+        <i class="fa fa-user-plus"></i> {{ menuItems[menuArray[42]].title }}
+      </a>
+        <a [routerLink]="[menuItems[menuArray[11]].path]" *ngIf="menuArray[11] > -1">
+        <i class="fa fa-user-plus"></i> {{ menuItems[menuArray[11]].title }}
+      </a>
+       <a [routerLink]="[menuItems[menuArray[4]].path]" *ngIf="menuArray[4] > -1">                                                                        
+        <i class="fa fa-user-plus"></i> {{ menuItems[menuArray[4]].title }}
+      </a>
+       <a [routerLink]="[menuItems[menuArray[19]].path]" *ngIf="menuArray[19] > -1">                                                                        
+        <i class="fa fa-user-plus"></i> {{ menuItems[menuArray[19]].title }}
+      </a>
+       <a [routerLink]="[menuItems[menuArray[20]].path]" *ngIf="menuArray[20] > -1">
+        <i class="fa fa-user-plus"></i> {{ menuItems[menuArray[20]].title }}
+      </a>
+      
+    </li>
+
+    <!-- Agent View -->
+    <li *ngIf="isDesktopMenu() && agent_view" style="margin-top: 30px;">
+      <a [routerLink]="[menuItems[menuArray[22]].path]" *ngIf="menuArray[22] > -1">
+        <i class="fa fa-id-badge"></i> {{ menuItems[menuArray[22]].title }}
+      </a>
+    </li>
+
+    <!-- Profile & Logout -->
+     <div style="display: flex; flex-direction: column; gap: 10px;">
+
+ 
+    <li style="display: flex; flex-direction: column; gap: 20px;">
+      <a>
+        <i class="fa fa-user"></i> {{ uname }}
+      </a>
+      <a (click)="logout()">Logout</a>
+
+    </li>
+    <li>
+      <a>
+        <i class="fa fa-bell"></i> Notifications <span class="notification">5</span>
+      </a>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <!-- <form class="navbar-form">
+        <div class="input-group no-border">
+        <input
+        type="text"
+        value=""
+        class="form-control"
+        placeholder="Search..."/>
+        <button
+        mat-raised-button
+        type="submit"
+        class="btn btn-white btn-round btn-just-icon">
+        <i class="material-icons">search</i>
+        <div class="ripple-container"></div>
+        </button>
+        </div>
+        </form> -->
+        <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)">
+        <i class="material-icons">dashboard</i>
+        <p>
+        <span class="d-lg-none d-md-block">Stats</span>
+        </p>
+        </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+          class="nav-link"
+          href="javascript:void(0)"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <i class="material-icons">notifications</i>
+          <span class="notification">5</span>
+          <p>
+          <span class="d-lg-none d-md-block">Some Actions</span>
+          </p>
+          </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="javascript:void(0)"
+              >Mike John responded to your email</a><a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
+              <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
+              <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
+              <a class="dropdown-item" href="javascript:void(0)">Another One</a>
+            </div>
+          </li>
+        <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)">
+        <i class="material-icons">person</i>
+        <p>
+        <span class="d-lg-none d-md-block">Account</span>
+        </p>
+        </a>
+        </li>
+        </ul>
+        </div>
+    </li>
+  </div>
+
+    <!-- Search -->
+    <!-- <li>
+      <form>
+        <input type="text" class="form-control" placeholder="Search..." />
+      </form>
+    </li> -->
+
+    <!-- Notifications -->
+ 
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
