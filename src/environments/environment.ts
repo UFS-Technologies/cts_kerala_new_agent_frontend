@@ -9,6 +9,7 @@ export const environment = {
 // BasePath: "http://DESKTOP-P62TID6:3505/",
 //  FilePath: 'http://tvmapi.trackbox.co.in/uploads'
 //  BasePath:'https://ctskeralaapi.ufstech.in/',
+// BasePath: 'http://localhost:3505/', 
 BasePath: 'http://localhost:3505/', 
  FilePath: 'https://ctskeralaapi.ufstech.in'
 };

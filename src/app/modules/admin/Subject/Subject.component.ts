@@ -33,6 +33,9 @@ constructor(public Subject_Service_:Subject_Service, private route: ActivatedRou
 ngOnInit() 
 {
     this.Login_User_Id = Number(localStorage.getItem('Login_User'));
+    if (isNaN(this.Login_User_Id)) {
+        this.Login_User_Id = 0;
+    }
     this.Permissions = Get_Page_Permission(5);
     if(this.Permissions==undefined || this.Permissions==null)
     {

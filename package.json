@@ -5,10 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
-    "build": "ng build && gzipper --verbose ./dist ",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && ng build && gzipper --verbose ./dist ",
+    "test": "set NODE_OPTIONS=--openssl-legacy-provider && ng test",
+    "lint": "set NODE_OPTIONS=--openssl-legacy-provider && ng lint",
+    "e2e": "set NODE_OPTIONS=--openssl-legacy-provider && ng e2e",
     "gzipper": "gzipper",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o"
   },
